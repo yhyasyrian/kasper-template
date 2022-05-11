@@ -1,0 +1,96 @@
+#Portfoil{
+    padding: 40px 0;
+    .container{
+        ul{
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            li{
+                padding: 12px;
+                margin: 7px;
+                cursor: pointer;
+                &.active{
+                    background-color: $main;
+                    color: #fff;
+                    border-radius: 7px;
+                }
+            }
+        }
+    }
+    .imgs-container{
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        justify-content: space-evenly;
+        .box{
+            flex-basis: 25%;
+            position: relative;
+            overflow: hidden;
+            &:hover{
+                .caption{
+                    left: -15px;
+                }
+                img{
+                    transform: rotate(5deg) scale(1.4);
+                    background-image: linear-gradient(to right,rgba(#000,0.2),rgba(#000,0.7));
+                }
+                .effect{
+                    left: 0%;
+                }
+            }
+            @include mobaile{
+                flex-basis: 100%;
+            }
+            @include tablet{
+                flex-basis: 50%;
+            }
+            img{
+                width: 100%;
+                transition: 0.5s;
+            }
+            .caption{
+                left: -100%;
+                position: absolute;
+                z-index: 1;
+                padding: 15px;
+                background-color: #fff;
+                border-radius: 7px;
+                padding-left: 25px;
+                transition: 0.3s;
+                top: 10%;
+                h4{
+                    font-weight: 800;
+                    color: $dark;
+                }
+            }
+            .effect{
+                position: absolute;
+                // z-index: 2;
+                background: rgba(#000,0.35);
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                transition: .5s;
+            }
+        }
+        $data: 'App','Photo','Web','Print';
+        @each $datas in $data {
+            &[data-view-img="#{$datas}"]{
+                .box{
+                    display: none;
+                    &[data-img="#{$datas}"]{
+                        display: block;
+                        flex-basis: 50%;
+                        @include mobaile{
+                            flex-basis: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        .box[data-view-img="All"]{
+            display: block;
+        }
+    }
+}

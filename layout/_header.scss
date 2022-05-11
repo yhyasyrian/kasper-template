@@ -1,0 +1,96 @@
+header {
+    position: relative;
+    width: 100%;
+    // background: #000000AA;
+    .container {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 7px 4px;
+
+        &::after {
+            content: "";
+            width: calc(100% - 30px);
+            left: 15px;
+            height: 3px;
+            background: $withe;
+            position: absolute;
+            bottom: -2px;
+            z-index: -1;
+        }
+
+        a img {
+            height: 40px;
+        }
+
+        nav {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            i.fa-bars {
+                display: none;
+                margin-right: 1em;
+                font-size: 1.5em;
+                cursor: pointer;
+                @include mobaile {
+                    display: block;
+                    color: $withe;
+                }
+            }
+
+            ul {
+                display: flex;
+                justify-content: space-evenly;
+                list-style-type: none;
+
+                @include mobaile {
+                    flex-direction: column;
+                    position: absolute;
+                    top: 100%;
+                    width: 100%;
+                    background-color: $dark-o;
+                    // height: calc(100vh - 60px);
+                    justify-content: space-around;
+                    left: -100%;
+                    transition: 1.5s;
+                }
+                &.show{
+                    left: 0;
+                }
+                li {
+                    padding: 0 12px;
+
+                    a {
+                        color: $withe;
+                        padding: 17px 0;
+                        //transition: .5s;
+                        border-bottom: 3px solid rgba(#000, 0);
+                        &:hover,
+                        &.active {
+                            color: $main;
+                            border-bottom: 3px solid $main;
+                        }
+                        @include mobaile{
+                            display: block;
+                        }
+                    }
+                }
+            }
+
+            .form>i {
+                color: $withe;
+                padding-left: 10px;
+                border-left: 1px solid $withe;
+                height: 16px + 16px;
+                transform: translateY(0);
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+}
+
+// 768

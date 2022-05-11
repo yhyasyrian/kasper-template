@@ -1,0 +1,33 @@
+@import '../components/variables';
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --main:#19c8fa;
+    --main-o:#19c8faA0;
+    --dark:#333;
+    --dark-o:#33333380;
+    --withe:#eee;
+}
+a {
+    text-decoration: none;
+    color: $dark;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+@import '../components/containet';
+@import '../components/media';
+@import '../components/mixin';
+@import '../layout/header';
+@import '../layout/landig';
+@import '../layout/services';
+@import '../layout/design';
+@import '../layout/portfolio';
+@import '../layout/video';
+@import '../layout/aboutus';
+@import '../layout/stats';
+@import '../layout/skills';
+@import '../layout/quote';

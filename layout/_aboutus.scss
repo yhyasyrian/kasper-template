@@ -1,0 +1,15 @@
+#Abutus{
+    text-align: center;
+    .img{
+        position: relative;
+        overflow: hidden;
+        img{
+            position: relative;
+            bottom: -120px;
+            max-width: 100%;
+            @include mobaile{
+                bottom: -85px;
+            }
+        }
+    }
+}

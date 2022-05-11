@@ -1,0 +1,33 @@
+#Quote{
+    padding: 100px 0;
+    background-image: url('../image/quote.jpg');
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    &::before{
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        top: 0;
+        height: 100%;
+        background-color: rgba(#000, 0.7);
+    }
+    .container{
+        color: #fff;
+        z-index: 2;
+        position: relative;
+        q{
+            &::before{
+                content: open-quote;
+            }
+            &::after{
+                content: close-quote;
+            }
+            display: block;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+    }
+}

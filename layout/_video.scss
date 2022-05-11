@@ -1,0 +1,48 @@
+#Video{
+    position: relative;
+    .video{
+        //position: relative;
+        video{
+            width: 100%;
+        }
+    }
+    .text{
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        width: 100%;
+        background: $main-o;
+        padding: 25px;
+        @include mobaile{
+            padding: 15px 0;
+        }
+        text-align: center;
+        h3{
+            text-transform: uppercase;
+            color: $withe;
+            padding: 20px;
+            font-weight: normal;
+            font-size: 2em;
+            @include mobaile{
+                font-size: 1.25em;
+                padding: 10px;
+            }
+        }
+        p{
+            color: $withe;
+            padding: 3px;
+            margin-bottom: 30px;
+            @include mobaile{
+                margin-bottom: 10px;
+            }
+        }
+        a{
+            margin-top: 10px;
+            background: $dark;
+            color: $withe;
+            padding: 7px;
+            border-radius: 5px;
+        }
+    }
+}

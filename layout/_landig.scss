@@ -1,0 +1,67 @@
+#landig{
+    position: relative;
+    width: 100%;
+    height:100vh;
+    top: -57px;;
+    background-image: url(../image/landing.jpg);
+    background-size: cover;
+    z-index: -3;
+    background-color: $dark;
+    .lear{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: $dark-o;
+        z-index: -2;
+        .text{
+            position: absolute;
+            z-index: -1;
+            top: 50%;
+            transform: translateY(-50%);
+            max-width: 600px;
+            background: $main-o;
+            padding: 17px 31px  {
+                left: 50px;
+            };
+            left: -5px;
+            border-radius: 4px;
+            .contecnt{
+                h1{
+                    color: $withe;
+                    font-weight: bolder;
+                    @include mobaile{
+                        text-align: center;
+                    }
+                }
+                p{
+                    color: $withe;
+                    line-height: 2;
+                }
+            }
+        }
+        .shares{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+            padding: 0 1em;
+            i{
+                color: $withe;
+            }
+        }
+        .points{
+            position: absolute;
+            top: 90%;
+            transform: translateX(-50%);
+            left: 50%;
+            span{
+                width: 15px;
+                height: 15px;
+                background: $withe;
+                display: inline-block;
+                margin: 5px;
+                border-radius: 50%;
+            }
+        }
+    }
+}
